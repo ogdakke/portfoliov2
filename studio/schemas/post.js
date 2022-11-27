@@ -23,7 +23,30 @@ export default {
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [
+        {
+          type: 'block' 
+      },
+      {
+        name: 'postImage',
+        title: 'Post Image',
+        type: 'image',
+        fields: [
+          {
+            type: 'text',
+            name: 'alt',
+            title: 'Alternative text',
+            description: `Alternative text for the attached image.`,
+            options: {
+              isHighlighted: true
+            }
+          },
+        ],
+        options: {
+          hotspot: true
+        }
+      }
+    ]
     },
     {
       name: 'excerpt',

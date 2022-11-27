@@ -61,7 +61,20 @@ export default function Post({ data = {}, preview }) {
                 date={post.date}
                 author={post.author}
               />
-              <PostBody content={post.content} />
+              <PostBody
+                content={post.content}
+                postImage={post.PostImage?.asset?._ref && (
+                  <meta
+                    key="postImage"
+                    property='post:image'
+                    content={urlForImage(post.image)
+                    .width(1000)
+                    .height(600)
+                    .fit('crop')
+                    .url()}
+                  />
+                )}
+              />
             </article>
             <SectionSeparator />
             {morePosts.length > 0 && <MoreStories posts={morePosts} />}
