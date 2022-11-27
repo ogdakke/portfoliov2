@@ -41,7 +41,7 @@ export default function Post({ data = {}, preview }) {
             <article>
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {post.title} | DW_Blog
                 </title>
                 {post.coverImage?.asset?._ref && (
                   <meta

@@ -7,7 +7,7 @@
     "prestart": "npm run env",
     "precors:add": "npm run env",
     "predeploy": "npm run env",
-    "env": "npx @sanity/cli install && cp ../.env .env.development || cp ../.env.local .env.development"
+    "env": "npx @sanity/cli install"
   },
   "dependencies": {
     "@sanity/base": "^2.30.1",

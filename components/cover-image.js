@@ -6,12 +6,12 @@ import { urlForImage } from '../lib/sanity'
 export default function CoverImage({ title, slug, image: source, priority }) {
   const image = source?.asset?._ref ? (
     <div
-      className={cn('shadow-small', {
+      className={cn('shadow-small rounded-3xl', {
         'hover:shadow-medium transition-shadow duration-200': slug,
       })}
     >
       <Image
-        className="w-full h-auto"
+        className="w-full h-auto rounded-xl lg:rounded-3xl"
         layout="responsive"
         width={2000}
         height={1000}
@@ -22,7 +22,11 @@ export default function CoverImage({ title, slug, image: source, priority }) {
       />
     </div>
   ) : (
-    <div style={{ paddingTop: '50%', backgroundColor: '#ddd' }} />
+    <div className='bg-bgPrimary border color-accent-1 rounded-xl lg:rounded-3xl align-content-middle' >
+      <h1 className=' text-6xl text-center align-text-middle'>
+        {title}
+      </h1>
+    </div>
   )
 
   return (

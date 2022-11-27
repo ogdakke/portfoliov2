@@ -3,3 +3,7 @@
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
+
+* {
+    color: rgba(235, 235, 235, 0.89)
+}
