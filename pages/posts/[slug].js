@@ -13,6 +13,7 @@ import { CMS_NAME } from '../../lib/constants'
 import { postQuery, postSlugsQuery } from '../../lib/queries'
 import { urlForImage, usePreviewSubscription } from '../../lib/sanity'
 import { sanityClient, getClient, overlayDrafts } from '../../lib/sanity.server'
+import PostImage from '../../components/post-image'
 
 export default function Post({ data = {}, preview }) {
   const router = useRouter()
@@ -63,17 +64,8 @@ export default function Post({ data = {}, preview }) {
               />
               <PostBody
                 content={post.content}
-                postImage={post.PostImage?.asset?._ref && (
-                  <meta
-                    key="postImage"
-                    property='post:image'
-                    content={urlForImage(post.image)
-                    .width(1000)
-                    .height(600)
-                    .fit('crop')
-                    .url()}
-                  />
-                )}
+                components={post.components}
+
               />
             </article>
             <SectionSeparator />

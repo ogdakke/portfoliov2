@@ -23,7 +23,7 @@ export default function HeroPost({
               {title}
             </Link>
           </h3>
-          <div className="mb-4 text-lg md:mb-0">
+          <div className="mb-4 text-s md:mb-0">
             <Date dateString={date} />
           </div>
         </div>
