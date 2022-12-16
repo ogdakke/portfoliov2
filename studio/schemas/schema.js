@@ -8,7 +8,15 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // import blockContent from './blockContent'
 import post from './post'
 import author from './author'
+import page from './documents/page'
+import route from './documents/route'
+import portableText from './Objects/portableText'
+import textSection from './Objects/textSection'
+import siteConfig from './documents/siteConfig'
+import simplePortableText from './Objects/simplePortableText'
 
+
+// import siteConfig from './documents/siteConfig'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -19,5 +27,11 @@ export default createSchema({
     /* Your types here! */
     post,
     author,
+    page,
+    route,
+    portableText,
+    textSection,
+    siteConfig,
+    simplePortableText
   ]),
 })
