@@ -30,7 +30,7 @@ export default function Meta() {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content= "A personal developer portfolio in the form of an website for DEW. I develop websites and webapps for different purposes, but always with quality in mind."
+        content= "A personal developer portfolio website for DEW. I develop websites and webapps for different purposes, but always with quality in mind."
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} key="ogImage" />
     </Head>
