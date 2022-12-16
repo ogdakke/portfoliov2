@@ -9,7 +9,7 @@ export default function Intro() {
       </Link>
       <h4 className="max-w-xs md:max-w-sm text-left text-lg mt-5 md:pl-8">
         I'm a developer from Finland 
-        with a passion for Fullstack development and beautiful, fast and simple websites.
+        with a passion for Fullstack development of beautiful, fast and simple websites.
       </h4>
     </section>
   )
