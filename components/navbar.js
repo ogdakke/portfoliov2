@@ -4,15 +4,13 @@ import Link from 'next/link'
 
 export default function Navbar() {
   return (
-    <div className="flex justify-center w-screen fixed bottom-0 h-min px-3">
-        <nav className="relative w-full z-50 p-5 bg-accent-2/25 backdrop-blur-lg max-w-2xl bottom-2 rounded-2xl">
-          <ul className="flex flex-row gap-6 items-center justify-between px-3">
-            <Link className= "font-bold hover:underline px-3 py-1 rounded-xl " href={`/`}>Home</Link> 
-          <Link href={`/`} className="text-3xl lg:px-6 font-normal ">DEW</Link>
-            <Link className="font-bold hover:underline px-3 py-1 rounded-xl" href={`/Blog`}>Blog</Link>
+    <div className="z-50 flex justify-center w-screen fixed bottom-3 h-min px-3">
+        <nav className="w-full relative  p-5 bg-accent-1/40 backdrop-blur-xl max-w-2xl bottom-2 rounded-3xl">
+          <ul className=" flex flex-row gap-6 items-center justify-between px-3">
+            <Link className= "text-lg px-4 py-1 border border-transparent bg-bgPrimary/50 hover:border-accent-3/75 hover:bg-bgPrimary transition-all duration-150 rounded-full" href={`/`}>Home</Link>           
+            <Link className="text-lg px-4 py-1 border border-transparent bg-bgPrimary/50 hover:border-accent-3/75 hover:bg-bgPrimary transition-colors rounded-full" href={`/Blog`}>Blog</Link>
           </ul>
         </nav>
-    
     </div>
   )
 }

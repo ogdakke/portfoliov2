@@ -5,6 +5,7 @@
 @tailwind utilities;
 
 * {
-    color: rgba(235, 235, 235, 0.89)
+    color: rgba(235, 235, 235, 0.89);
+    cursor: url(../public/cursor.svg) 18 18, default;
+    scroll-behavior: smooth;
 }
-

@@ -13,7 +13,7 @@ export default {
         data: [
           {
             title: 'GitHub repo',
-            value: 'https://github.com/sanity-io/sanity-template-nextjs-landing-pages',
+            value: 'https://github.com/ogdakke/portfoliov2',
             // @TODO revisit in v3 when this is as  simple as doing
             // value: `https://${process.env.NEXT_PUBLIC_VERCEL_GIT_PROVIDER}.com/${process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER}/${NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG}`,
             category: 'Code',

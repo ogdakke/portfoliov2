@@ -2,13 +2,13 @@ import Navbar from './navbar'
 import Footer from '../components/footer'
 import Meta from '../components/meta'
 
-export default function Layout({ preview, children }) {
+export default function Layout({ children }) {
   return (
     <>
       <Meta />
-        <Navbar preview={preview} />
+        <Navbar/>
       <div className="min-h-screen">
-        <main>{children}</main>
+        <main >{children}</main>
       </div>
       <Footer />
     </>

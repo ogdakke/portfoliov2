@@ -20,11 +20,16 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
       <Layout preview={preview}>
         <Head>
           <title>DEW | Blog</title>
+          <meta
+        name="description"
+        key="blog-description"
+        content= "DEW's blog. I post about web-development, web design and other stuff."
+          />
         </Head>
         <Container>
           <BlogIntro/>
           <SectionSeparator/>
-          <p className="text-accent-1 m-2 rounded-lg lg:rounded-2xl lg:text-2xl text-lg absolute bg-slate-200/80 w-min py-1 px-3" >New!</p>
+          <p className=" m-2 rounded-full lg:text-2xl text-lg  bg-bgPrimary/50 w-min py-1 px-3" >New!</p>
           {heroPost && (
             <HeroPost
               title={heroPost.title}

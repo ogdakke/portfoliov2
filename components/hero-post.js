@@ -18,16 +18,16 @@ export default function HeroPost({
       </div>
       <div className="mb-20 md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 md:mb-28">
         <div>
-          <h3 className="mb-4 text-4xl leading-tight lg:text-6xl">
+          <h3 className="mb-4 text-4xl leading-tight lg:text-5xl">
             <Link href={`/Blog/posts/${slug}`} className="hover:underline">
               {title}
             </Link>
           </h3>
-          <div className="mb-4 text-s md:mb-0">
+          <div className="mb-4 text-xs md:mb-0">
             <Date dateString={date} />
           </div>
         </div>
-        <div>
+        <div className="md:border-t md:border-accent-2 md:pt-4 ">
           <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>
           {author && <Avatar name={author.name} picture={author.picture} />}
         </div>

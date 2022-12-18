@@ -20,17 +20,11 @@
      // If an image has been provided, render the image with a shadow effect
      // and wrap it in a link to the post page if a slug has been provided
      <div
-       className={cn('shadow-small rounded-3xl', {
-         // This line of code is using the Ternary operator to conditionally
-         // apply a CSS class to the image based on whether a slug has been provided.
-         // If a slug is provided, the class "hover:shadow-medium transition-shadow duration-200"
-         // will be applied. Otherwise, no class will be applied.
-         'hover:shadow-medium transition-shadow duration-200': slug,
-       })}
+       className="flex justify-center"
      >
        <Image
-         className="w-full h-auto rounded-xl lg:rounded-3xl"
-         layout="responsive"
+         className=" w-full h-auto rounded-xl lg:rounded-3xl shadow-xl"
+         
          width={2000}
          height={1000}
          // This line of code sets the alt attribute for the image to "Cover Image for [title]"
@@ -49,7 +43,7 @@
   ) : (
     // If no image has been provided, render the post title in a colored box
     <div className='bg-bgPrimary border color-accent-1 rounded-xl lg:rounded-3xl align-content-middle' >
-      <h1 className=' text-6xl text-center align-text-middle'>
+      <h1 className=' text-5xl text-center align-text-middle'>
         {title}
       </h1>
     </div>
