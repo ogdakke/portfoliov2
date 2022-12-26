@@ -28,11 +28,10 @@ export default function Meta() {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta
-        name="description"
-        key="home-description"
-        content= "Developer portfolio for DEW. I develop websites and webapps for different purposes, but always with quality in mind."
-      />
+      {/* 
+        Assign mete tags on each different page individually, so
+        there will not be any duplicate tags.
+      */}
       <meta property="og:image" content={HOME_OG_IMAGE_URL} key="ogImage" />
     </Head>
   )
