@@ -1,14 +1,3 @@
-/**
- * Renders a post image with a link to the post page if a slug is provided.
- * If no image is provided, a title is displayed in a colored box instead.
- * 
- * @param {string} title The title of the post.
- * @param {string} slug The slug for the post. This is used to create a link to the post page.
- * @param {object} image An object containing image data, including the asset reference.
- * @param {number} priority A number indicating the priority of the image for lazy loading.
- * 
- * @returns {React.Component} A React component that renders the post image or title.
- */
  import cn from 'classnames'
  import Image from 'next/image'
  import Link from 'next/link'

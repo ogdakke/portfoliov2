@@ -28,9 +28,9 @@ export default {
           type: 'block',
       },
       {
+        type: 'image',
         name: 'postImage',
         title: 'Post Image',
-        type: 'image',
         fields: [
           {
             type: 'text',
@@ -46,7 +46,6 @@ export default {
           hotspot: true
         }
       },
-      
     ]
     },
     {

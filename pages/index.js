@@ -22,6 +22,11 @@ export default function Home({allPosts: initialAllPosts,  preview }) {
       <Layout preview={preview}>
         <Head>
           <title>DEW | Home</title>
+          <meta
+            name="description"
+            key="home-description"
+            content= "Developer portfolio for DEW. I develop websites and webapps for different purposes, but always with quality in mind."
+          />
         </Head>
         <Container>
           <Intro />

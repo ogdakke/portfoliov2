@@ -17,10 +17,6 @@ export default function Table () {
         </tr>
         <tr className= "hover:bg-accent-1 transition-colors">
         <td className="pl-2 py-1">React</td>
-        <td className="border-l border-inherit pl-2">5/10</td>
-        </tr>
-        <tr className= "hover:bg-accent-1 transition-colors">
-        <td className="pl-2 py-1">Next.js</td>
         <td className="border-l border-inherit pl-2">7/10</td>
         </tr>
         <tr className= "hover:bg-accent-1 transition-colors">
@@ -28,12 +24,16 @@ export default function Table () {
         <td className="border-l border-inherit pl-2">6/10</td>
         </tr>
         <tr className= "hover:bg-accent-1 transition-colors">
+        <td className="pl-2 py-1">C#</td>
+        <td className="border-l border-inherit pl-2">5/10</td>
+        </tr>
+        <tr className= "hover:bg-accent-1 transition-colors">
         <td className="pl-2 py-1">HTML/CSS</td>
         <td className="border-l border-inherit pl-2">9/10</td>
         </tr>
         <tr className= "hover:bg-accent-1 transition-colors">
         <td className="pl-2 py-1">Figma</td>
-        <td className="border-l border-inherit pl-2">7/10</td>
+        <td className="border-l border-inherit pl-2">9/10</td>
         </tr>
         <tr className= "hover:bg-accent-1 transition-colors">
         <td className="pl-2 py-1">Adobe CC</td>
