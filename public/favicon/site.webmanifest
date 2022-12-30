@@ -5,11 +5,15 @@
     {
       "src": "/favicons/favicon@512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     }
   ],
-  "theme_color": "#000000",
-  "background_color": "#000000",
+  "theme_color": "#161616",
+  "background_color": "#161616",
   "display": "standalone",
-  "description": "Web-app version of DEW website."
+  "description": "Web-app for DEW website.",
+  "orientation": "portrait-primary",
+  "id": "https://deweloper.fi/",
+  "lang": "fi"
 }

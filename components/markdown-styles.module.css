@@ -16,6 +16,10 @@
   @apply ml-5 list-disc
 }
 
+.markdown h1{
+  @apply text-4xl mt-14 mb-10 leading-snug
+}
+
 .markdown h2 {
   @apply text-3xl mt-12 mb-4 leading-snug;
 }
