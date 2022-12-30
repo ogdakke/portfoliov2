@@ -10,6 +10,7 @@ import Image from 'next/image'
 import { indexQuery } from '../lib/queries'
 import { urlForImage, usePreviewSubscription } from '../lib/sanity'
 import { getClient, overlayDrafts } from '../lib/sanity.server'
+import HeroLanding from '../components/hero-landing'
 
 export default function Home({allPosts: initialAllPosts,  preview }) {
   const { data: allPosts } = usePreviewSubscription(indexQuery, {
@@ -26,15 +27,8 @@ export default function Home({allPosts: initialAllPosts,  preview }) {
         <Container>
           <Intro />
           <SectionSeparator/>
+          <HeroLanding/>
           
-          <div className="flex flex-col gap-2">
-            <h1 className="text-3xl py-3">Links:</h1>
-            <ul className="flex gap-8 pb-4">
-              <li>
-                <Link className="bg-accent-2 border-2 border-transparent hover:border-accent-3 hover:bg-accent-2/25 transition-colors text-xl  px-4 py-2 rounded-full" href={'https://github.com/ogdakke'}>GitHub</Link></li>
-            </ul>
-            <Table/>
-          </div>
           <SectionSeparator/>
           {heroPost && (
             <>
@@ -48,6 +42,15 @@ export default function Home({allPosts: initialAllPosts,  preview }) {
               />
             </>
           )}
+          <SectionSeparator/>
+          <div className="flex flex-col gap-2">
+            <h1 className="text-3xl py-3">Links:</h1>
+            <ul className="flex gap-8 pb-4">
+              <li>
+                <Link className="bg-accent-2 border-2 border-transparent hover:border-accent-3 hover:bg-accent-2/25 transition-colors text-xl  px-4 py-2 rounded-full" href={'https://github.com/ogdakke'}>GitHub</Link></li>
+            </ul>
+            <Table/>
+          </div>
         </Container>
       </Layout>
     </>

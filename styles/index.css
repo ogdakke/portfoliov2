@@ -9,3 +9,7 @@
     cursor: url(../public/cursor.svg) 18 18, default;
     scroll-behavior: smooth;
 }
+
+body {
+    background-color: #161616;
+}

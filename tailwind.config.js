@@ -17,6 +17,9 @@ module.exports = {
         cyan: '#79FFE1',
         bgPrimary: '#161616'
       },
+      animation: {
+        'pulse-slow': 'pulse 4s infinite'
+      },
       spacing: {
         28: '7rem',
       },
