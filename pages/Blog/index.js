@@ -29,7 +29,7 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
         <Container>
           <BlogIntro/>
           <SectionSeparator/>
-          <p className=" m-2 rounded-full lg:text-2xl text-lg  bg-bgPrimary/50 w-min py-1 px-3" >New!</p>
+          <p className="z-10 text-accent-7 absolute m-2 rounded-full lg:text-2xl text-lg bg-accent-3 w-max py-2 px-4">New in blog!</p>
           {heroPost && (
             <HeroPost
               title={heroPost.title}

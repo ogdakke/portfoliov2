@@ -43,6 +43,11 @@ export default function Post({ data = {}, preview }) {
                 <title>
                   {post.title} | DEW | Blog
                 </title>
+                <meta
+                    name="description"
+                    key={post.title}
+                    content={post.excerpt}
+                />
                 {post.coverImage?.asset?._ref && (
                   <meta
                     key="ogImage"
@@ -51,8 +56,7 @@ export default function Post({ data = {}, preview }) {
                       .width(1200)
                       .height(627)
                       .fit('crop')
-                      .url()}
-                  />
+                      .url()} />
                 )}
               </Head>
               <PostHeader
