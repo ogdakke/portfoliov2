@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "@portabletext/react": "^1.0.6",
+    "@radix-ui/react-dropdown-menu": "^2.0.1",
+    "@radix-ui/react-tooltip": "^1.0.2",
     "@sanity/image-url": "^1.0.1",
-    "@sanity/vision": "^3.1.2",
+    "@sanity/vision": "^2.20.0",
     "@sanity/webhook": "^2.0.0",
     "@vercel/analytics": "^0.1.6",
     "bcp47": "^1.1.2",

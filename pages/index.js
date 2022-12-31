@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Link from 'next/link'
+import Links from '../components/links'
 import Container from '../components/container'
 import Intro from '../components/intro'
 import Layout from '../components/layout'
@@ -31,7 +31,6 @@ export default function Home({allPosts: initialAllPosts,  preview }) {
         </Head>
         <Container>
           <Intro />
-          <SectionSeparator/>
           <HeroLanding/>
           
           <SectionSeparator/>
@@ -48,14 +47,8 @@ export default function Home({allPosts: initialAllPosts,  preview }) {
             </>
           )}
           <SectionSeparator/>
-          <div className="flex flex-col gap-2">
-            <h1 className="text-3xl py-3">Links:</h1>
-            <ul className="flex gap-8 pb-4">
-              <li>
-                <Link className="bg-accent-2 border-2 border-transparent hover:border-accent-3 hover:bg-accent-2/25 transition-colors text-xl  px-4 py-2 rounded-full" href={'https://github.com/ogdakke'}>GitHub</Link></li>
-            </ul>
-            <Table/>
-          </div>
+          <Links/>  
+          <Table/>
         </Container>
       </Layout>
     </>

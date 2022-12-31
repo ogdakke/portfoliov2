@@ -2,7 +2,7 @@ export default function Table () {
     return (
         <>
         <h1 className="text-3xl">Skills:</h1>
-        <p className="text-sm text-accent-4">A table of notable skills of mine with an rough estimate on the profiency where 10 would be completely fluent.</p>
+        <p className="text-sm text-accent-4 py-3">A table of notable skills of mine with an rough estimate on the profiency where 10 would be completely fluent.</p>
         <table className="cursor-custom text-lg text-left table-auto w-full">
         <thead className="bg-accent-2/25">
         <tr>

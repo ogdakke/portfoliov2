@@ -5,11 +5,10 @@
 @tailwind utilities;
 
 * {
-    color: rgba(235, 235, 235, 0.89);
-    cursor: url(../public/cursor.svg) 18 18, default;
+    /* color: rgba(235, 235, 235, 0.89); */
     scroll-behavior: smooth;
 }
 
 body {
-    background-color: #161616;
+    /* background-color: #161616; */
 }
