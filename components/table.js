@@ -11,31 +11,31 @@ export default function Table () {
         </tr>
     </thead>
     <tbody className="divide-y divide-accent-2">
-        <tr className= "border-accent-2 hover:bg-accent-1 transition-colors">
+        <tr className= "border-accent-2 hover:bg-accent-1/25 transition-colors">
             <td className="pl-2 py-1">JavaScript</td>
             <td className="border-l border-inherit pl-2">7/10</td>
         </tr>
-        <tr className= "hover:bg-accent-1 transition-colors">
+        <tr className= "hover:bg-accent-1/25 transition-colors">
         <td className="pl-2 py-1">React</td>
         <td className="border-l border-inherit pl-2">7/10</td>
         </tr>
-        <tr className= "hover:bg-accent-1 transition-colors">
+        <tr className= "hover:bg-accent-1/25 transition-colors">
         <td className="pl-2 py-1">php</td>
         <td className="border-l border-inherit pl-2">6/10</td>
         </tr>
-        <tr className= "hover:bg-accent-1 transition-colors">
+        <tr className= "hover:bg-accent-1/25 transition-colors">
         <td className="pl-2 py-1">C#</td>
         <td className="border-l border-inherit pl-2">5/10</td>
         </tr>
-        <tr className= "hover:bg-accent-1 transition-colors">
+        <tr className= "hover:bg-accent-1/25 transition-colors">
         <td className="pl-2 py-1">HTML/CSS</td>
         <td className="border-l border-inherit pl-2">9/10</td>
         </tr>
-        <tr className= "hover:bg-accent-1 transition-colors">
+        <tr className= "hover:bg-accent-1/25 transition-colors">
         <td className="pl-2 py-1">Figma</td>
         <td className="border-l border-inherit pl-2">9/10</td>
         </tr>
-        <tr className= "hover:bg-accent-1 transition-colors">
+        <tr className= "hover:bg-accent-1/25 transition-colors">
         <td className="pl-2 py-1">Adobe CC</td>
         <td className="border-l border-inherit pl-2">8/10</td>
         </tr>

@@ -23,7 +23,7 @@
        className="flex justify-center"
      >
        <Image
-         className=" w-full h-auto rounded-xl lg:rounded-3xl shadow-xl"
+         className=" w-full h-auto rounded-3xl lg:rounded-4xl shadow-xl"
          
          width={2000}
          height={1000}
@@ -48,7 +48,8 @@
       </h1>
     </div>
   )
-
+  console.log(source);
+  console.log(image);
   // Return the image or title wrapped in a div with the class "sm:mx-0"
   return (
     <div className="sm:mx-0">

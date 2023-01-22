@@ -68,8 +68,7 @@ export default function Post({ data = {}, preview }) {
               <PostBody
                 content={post.content}
                 components={post.components}
-
-              />
+                />
             </article>
             <SectionSeparator />
             {morePosts.length > 0 && <MoreStories posts={morePosts} />}

@@ -6,9 +6,8 @@ import Layout from '../components/layout'
 import SectionSeparator from '../components/section-separator'
 import Table from '../components/table'
 import HeroPost from '../components/hero-post'
-import Image from 'next/image'
 import { indexQuery } from '../lib/queries'
-import { urlForImage, usePreviewSubscription } from '../lib/sanity'
+import { usePreviewSubscription } from '../lib/sanity'
 import { getClient, overlayDrafts } from '../lib/sanity.server'
 import HeroLanding from '../components/hero-landing'
 
@@ -17,7 +16,7 @@ export default function Home({allPosts: initialAllPosts,  preview }) {
     initialData: initialAllPosts,
     enabled: preview,
   })
-  const [heroPost, ...morePosts] = allPosts || []
+  const [heroPost] = allPosts || []
   return (
     <>
       <Layout preview={preview}>
@@ -36,7 +35,7 @@ export default function Home({allPosts: initialAllPosts,  preview }) {
           <SectionSeparator/>
           {heroPost && (
             <>
-              <p className="z-10 text-accent-7 absolute m-2 rounded-full lg:text-2xl text-lg bg-accent-3 w-max py-2 px-4">New in blog!</p>
+              <p className="z-10 text-accent-7 absolute m-2 rounded-2xl text-lg bg-accent-3 w-max py-2 px-4">New in blog!</p>
               <HeroPost 
                 title={heroPost.title}
                 coverImage={heroPost.coverImage}
