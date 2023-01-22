@@ -21,6 +21,7 @@ export default function Intro() {
       </Link>
       <div className="p-4 flex">
               <button 
+              // really nice way to set the theme. Borrowed from https://github.com/leerob/leerob.io/blob/main/components/Container.tsx
               onClick={() => setTheme( theme === 'dark' ? 'light' : 'dark')}
               aria-label="Toggle Dark Mode"
               title='Toggle Dark Mode'
