@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <div className="z-50 flex justify-center w-screen fixed bottom-4 h-min px-3">
         <nav className=" w-full relative p-5 bg-accent-4/50 dark:bg-accent-1/40 backdrop-blur-xl max-w-2xl bottom-2 rounded-3xl">
-          <ul className="fill-accent-5 dark:fill-accent-3 text-accent-5 dark:text-accent-3  flex flex-row gap-6 items-center justify-between">
+          <div className="fill-accent-5 dark:fill-accent-3 text-accent-5 dark:text-accent-3  flex flex-row gap-6 items-center justify-between">
             <Link
              className= "flex items-center gap-1 text-lg pl-3 pr-4 py-1 border border-transparent bg-bgLight/50 hover:bg-bgLight dark:bg-bgPrimary/50 dark:hover:border-accent-3/75 dark:hover:bg-bgPrimary transition-all duration-150 rounded-3xl hover:border-accent-5" href={`/`}>
               <svg aria-label='logo of home button' width="18" height="18" viewBox="0 0 20 20" fill="inherit" xmlns="http://www.w3.org/2000/svg">
@@ -21,7 +21,7 @@ export default function Navbar() {
             </svg>
             Blog
               </Link>
-          </ul>
+          </div>
         </nav>
     </div>
   )

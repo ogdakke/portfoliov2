@@ -24,9 +24,9 @@ export default function Meta() {
       <link rel="manifest" href="/favicon/site.webmanifest" />
     
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
-      <meta name="msapplication-TileColor" content="#000000" />
+      <meta name="msapplication-TileColor" content="#161616" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
-      <meta name="theme-color" content="#000" />
+      <meta name="theme-color" content="#161616" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       {/* 
         Assign mete tags on each different page individually, so
