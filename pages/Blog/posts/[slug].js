@@ -12,11 +12,12 @@ import PostTitle from '../../../components/post-title'
 import { postQuery, postSlugsQuery } from '../../../lib/queries'
 import { urlForImage, usePreviewSubscription } from '../../../lib/sanity'
 import { sanityClient, getClient, overlayDrafts } from '../../../lib/sanity.server'
-import PostImage from '../../../components/post-image'
 
 export default function Post({ data = {}, preview }) {
   const router = useRouter()
 
+
+  // TO avoid hydration problems, put the the title text inside a const
   const slug = data?.post?.slug
   const {
     data: { post, morePosts },
@@ -25,11 +26,13 @@ export default function Post({ data = {}, preview }) {
     initialData: data,
     enabled: preview && slug,
   })
-
+  
   if (!router.isFallback && !slug) {
     return <ErrorPage statusCode={404} />
   }
-
+  
+  const titleText = `${post.title} | DEW | BLOG`
+  
   return (
     <Layout preview={preview}>
       <Container>
@@ -41,7 +44,7 @@ export default function Post({ data = {}, preview }) {
             <article>
               <Head>
                 <title>
-                  {post.title} | DEW | Blog
+                  {titleText}
                 </title>
                 <meta
                     name="description"
@@ -65,6 +68,7 @@ export default function Post({ data = {}, preview }) {
                 date={post.date}
                 author={post.author}
               />
+              <SectionSeparator/>
               <PostBody
                 content={post.content}
                 components={post.components}

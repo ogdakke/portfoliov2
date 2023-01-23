@@ -15,7 +15,12 @@ module.exports = {
         'accent-3': 'hsla(0,0%,100%,0.82)',
         'accent-4': '#909090',
         'accent-5': '#121212',
+        'accent-6': '#1e1e1e',
         'accent-7': '#333',
+        'white-shadow': 'rgba(100, 100, 100, 0.05)',
+        'dark-shadow': 'rgba(0, 0, 0, 0.1)',
+        'code-text': '#ff8f40',
+        
 
 
         success: '#0070f3',

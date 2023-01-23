@@ -1,26 +1,51 @@
 import markdownStyles from './markdown-styles.module.css'
 import { PortableText } from '@portabletext/react'
-import PostImage from './post-image'
-import * as Tooltip from '@radix-ui/react-tooltip'
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import { urlForImage } from '../lib/sanity'
+import Image from 'next/image'
+// import * as Tooltip from '@radix-ui/react-tooltip'
+// import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import Link from 'next/link'
 
-const components =  {
-  types:{
-    postImage: PostImage
+export default function PostBody(props) {
+  const {content} = props
+
+
+  const components =  {
+    types:{
+      image: ({value}) => {
+      // we need to get the image source url, and since @sanity/image-url will give us optimised images for each instance we use it
+      const dimensions = value.asset._ref.split('-')[2]
+      const [width, height] = dimensions.split('x').map(Number)
+      const imgUrl = urlForImage(value.asset).height(height).width(width).url()
+      
+      //get the image dimensions from the url by using array.split, this finds the second [2] instance of "-" happening, and returns the string after that until the next "-" 
+      return (
+        <figure className="">
+          <Link href={imgUrl} target={'_blank'} title={value.alt}>
+          <Image
+            className="rounded-xl shadow-xl"
+            width={width}
+            height={height}
+            alt={value.alt}
+            src={imgUrl}
+            sizes="100vw"
+            priority={false} //this indicates lazy(true)
+          />
+          </Link>
+          <p className='px-2 text-accent-4'>{value.alt}</p>
+        </figure>
+          )
+      } 
+    }
   }
 
-}
-
-
-export default function PostBody({content, postImage}) {
-  console.log(content);
-  console.log(components);
-  console.log(postImage);
   return (
     <>
     <div className={`max-w-2xl mx-auto ${markdownStyles.markdown}`}>
-      <PortableText value={content}
-      components={components} />
+      <PortableText 
+        value={content}
+        components={components}
+      />
     </div>
     </>
   )

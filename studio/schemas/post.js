@@ -29,8 +29,6 @@ export default {
       },
       {
         type: 'image',
-        name: 'postImage',
-        title: 'Post Image',
         fields: [
           {
             type: 'text',
@@ -46,6 +44,7 @@ export default {
           hotspot: true
         }
       },
+      
     ]
     },
     {
