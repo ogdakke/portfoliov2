@@ -31,7 +31,6 @@ export default function Post({ data = {}, preview }) {
     return <ErrorPage statusCode={404} />
   }
   
-  const titleText = `${data.post.title} | DEW | BLOG`
   return (
     <Layout preview={preview}>
       <Container>
@@ -43,7 +42,7 @@ export default function Post({ data = {}, preview }) {
             <article>
               <Head>
                 <title>
-                  {titleText}
+                  {post.title}
                 </title>
                 <meta
                     name="description"
