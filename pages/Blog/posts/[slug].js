@@ -31,8 +31,7 @@ export default function Post({ data = {}, preview }) {
     return <ErrorPage statusCode={404} />
   }
   
-  const titleText = `${post.title} | DEW | BLOG`
-  
+  const titleText = `${data.post.title} | DEW | BLOG`
   return (
     <Layout preview={preview}>
       <Container>
