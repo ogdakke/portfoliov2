@@ -13,12 +13,12 @@ export default function PostBody(props) {
   const components =  {
     types:{
       image: ({value}) => {
-      // we need to get the image source url, and since @sanity/image-url will give us optimised images for each instance we use it
-      const dimensions = value.asset._ref.split('-')[2]
-      const [width, height] = dimensions.split('x').map(Number)
+        //get the image dimensions from the url by using array.split, this finds the second [2] instance of "-" happening, and returns the string after that until the next "-" 
+        const dimensions = value.asset._ref.split('-')[2]
+        const [width, height] = dimensions.split('x').map(Number)
+        // we need to get the image source url, and since @sanity/image-url will give us optimised images for each instance we use it
       const imgUrl = urlForImage(value.asset).height(height).width(width).url()
       
-      //get the image dimensions from the url by using array.split, this finds the second [2] instance of "-" happening, and returns the string after that until the next "-" 
       return (
         <figure className="">
           <Link href={imgUrl} target={'_blank'} title={value.alt}>
