@@ -20,7 +20,7 @@ export default function PostBody(props) {
       const imgUrl = urlForImage(value.asset).height(height).width(width).url()
       
       return (
-        <figure className="">
+        <figure>
           <Link href={imgUrl} target={'_blank'} title={value.alt}>
           <Image
             className="rounded-xl shadow-xl"
