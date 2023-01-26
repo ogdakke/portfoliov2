@@ -4,7 +4,7 @@ import { urlForImage } from '../lib/sanity'
 import Image from 'next/image'
 // import * as Tooltip from '@radix-ui/react-tooltip'
 // import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
-import Link from 'next/link'
+// import Link from 'next/link'
 
 export default function PostBody(props) {
   const {content} = props
@@ -14,14 +14,18 @@ export default function PostBody(props) {
     types:{
       image: ({value}) => {
         //get the image dimensions from the url by using array.split, this finds the second [2] instance of "-" happening, and returns the string after that until the next "-" 
-        const dimensions = value.asset._ref.split('-')[2]
-        const [width, height] = dimensions.split('x').map(Number)
+        const dimensions = value.asset.metadata.dimensions
+        const width = dimensions.width 
+        const height = dimensions.height
+        
+        // const dimensions = value.asset._id.split('-')[2]
+        // const [width, height] = dimensions.split('x').map(Number)
         // we need to get the image source url, and since @sanity/image-url will give us optimised images for each instance we use it
       const imgUrl = urlForImage(value.asset).height(height).width(width).url()
       
       return (
         <figure>
-          <Link href={imgUrl} target={'_blank'} title={value.alt}>
+
           <Image
             className="rounded-xl shadow-xl"
             width={width}
@@ -30,8 +34,10 @@ export default function PostBody(props) {
             src={imgUrl}
             sizes="100vw"
             priority={false} //this indicates lazy(true)
+            placeholder="blur"
+            blurDataURL={value.asset.metadata.blurHash}
           />
-          </Link>
+          
           <p className='px-2 text-accent-4'>{value.alt}</p>
         </figure>
           )
