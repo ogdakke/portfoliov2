@@ -22,7 +22,7 @@ export default function PostBody(props) {
         // const [width, height] = dimensions.split('x').map(Number)
         // we need to get the image source url, and since @sanity/image-url will give us optimised images for each instance we use it
       const imgUrl = urlForImage(value.asset).height(height).width(width).url()
-      
+      console.log();
       return (
         <figure>
 
@@ -35,7 +35,7 @@ export default function PostBody(props) {
             sizes="100vw"
             priority={false} //this indicates lazy(true)
             placeholder="blur"
-            blurDataURL={value.asset.metadata.blurHash}
+            blurDataURL={value.asset.metadata.lqip}
           />
           
           <p className='px-2 text-accent-4'>{value.alt}</p>
