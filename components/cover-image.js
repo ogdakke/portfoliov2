@@ -5,21 +5,24 @@
  export default function CoverImage({ title, slug, image: source, priority }) {
 
    
-   const imgUrl = urlForImage(source).height(1200).width(2000).url()
-   // Check if an image has been provided
-   const image = source?.asset?._ref ? (
+  const imgUrl = urlForImage(source).height(1200).width(2000).url()
+  // Check if an image has been provided
+  //  since the query is dereferencing like: "coverImage.asset->", we can just check for _id immediatly
+  const image = source?._id ? (
     // If an image has been provided, render the image with a shadow effect
     // and wrap it in a link to the post page if a slug has been provided
        <Image
         className=" w-full h-auto rounded-3xl lg:rounded-4xl shadow-xl"
         
         width={2000}
-        height={1000}
+        height={1200}
         alt={`Cover Image for ${title}`}
         src={imgUrl}
         sizes="100vw"
         // This line of code sets the priority of the image for lazy loading.
         priority={priority}
+        placeholder="blur"
+        blurDataURL={source.metadata.lqip}
         />  
   ) : (
     // If no image has been provided, render the post title in a box

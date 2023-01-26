@@ -13,16 +13,13 @@ export default function PostBody(props) {
   const components =  {
     types:{
       image: ({value}) => {
-        //get the image dimensions from the url by using array.split, this finds the second [2] instance of "-" happening, and returns the string after that until the next "-" 
+        // get the dimensions from metadata.
         const dimensions = value.asset.metadata.dimensions
         const width = dimensions.width 
         const height = dimensions.height
         
-        // const dimensions = value.asset._id.split('-')[2]
-        // const [width, height] = dimensions.split('x').map(Number)
         // we need to get the image source url, and since @sanity/image-url will give us optimised images for each instance we use it
       const imgUrl = urlForImage(value.asset).height(height).width(width).url()
-      console.log();
       return (
         <figure>
 
