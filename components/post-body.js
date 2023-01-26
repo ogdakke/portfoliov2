@@ -2,6 +2,7 @@ import markdownStyles from './markdown-styles.module.css'
 import { PortableText } from '@portabletext/react'
 import { urlForImage } from '../lib/sanity'
 import Image from 'next/image'
+import Link from 'next/link'
 // import * as Tooltip from '@radix-ui/react-tooltip'
 // import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 // import Link from 'next/link'
@@ -22,7 +23,7 @@ export default function PostBody(props) {
       const imgUrl = urlForImage(value.asset).height(height).width(width).url()
       return (
         <figure>
-
+          <Link href={imgUrl} target="_blank" value={value.alt}>
           <Image
             className="rounded-xl shadow-xl"
             width={width}
@@ -33,7 +34,8 @@ export default function PostBody(props) {
             priority={false} //this indicates lazy(true)
             placeholder="blur"
             blurDataURL={value.asset.metadata.lqip}
-          />
+            />
+            </Link>
           
           <p className='px-2 text-accent-4'>{value.alt}</p>
         </figure>
