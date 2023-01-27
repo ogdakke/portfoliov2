@@ -35,9 +35,6 @@ export default {
             name: 'alt',
             title: 'Alternative text',
             description: `Alternative text for the attached image.`,
-            options: {
-              isHighlighted: true
-            }
           },
         ],
         options: {
