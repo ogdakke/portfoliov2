@@ -10,6 +10,8 @@ import { indexQuery } from '../lib/queries'
 import { usePreviewSubscription } from '../lib/sanity'
 import { getClient, overlayDrafts } from '../lib/sanity.server'
 import HeroLanding from '../components/hero-landing'
+import { Suspense } from 'react'
+import Loading from './loading'
 
 export default function Home({allPosts: initialAllPosts,  preview }) {
   const { data: allPosts } = usePreviewSubscription(indexQuery, {
@@ -18,7 +20,7 @@ export default function Home({allPosts: initialAllPosts,  preview }) {
   })
   const [heroPost] = allPosts || []
   return (
-    <>
+    <Suspense fallback={<Loading/>}>
       <Layout preview={preview}>
         <Head>
           <title>DEW | Home</title>
@@ -50,7 +52,7 @@ export default function Home({allPosts: initialAllPosts,  preview }) {
           <Table/>
         </Container>
       </Layout>
-    </>
+    </Suspense>
   )
 }
 
