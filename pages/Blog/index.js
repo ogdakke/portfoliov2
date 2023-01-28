@@ -5,16 +5,37 @@ import HeroPost from '../../components/hero-post'
 import BlogIntro from '../../components/blog-intro'
 import Layout from '../../components/layout'
 import { indexQuery } from '../../lib/queries'
-import { usePreviewSubscription } from '../../lib/sanity'
 import { getClient, overlayDrafts } from '../../lib/sanity.server'
 import SectionSeparator from '../../components/section-separator'
+import { usePreviewSubscription } from '../../lib/sanity'
+
+
+export async function getStaticProps({ preview = false }) {
+  const allPosts = overlayDrafts(await getClient(preview).fetch(indexQuery))
+  return {
+    props: { allPosts, preview },
+    // If webhooks isn't setup then attempt to re-generate in 1 minute intervals
+    revalidate: process.env.SANITY_REVALIDATE_SECRET ? undefined : 60,
+  }
+}
+
 
 export default function Index({ allPosts: initialAllPosts, preview }) {
   const { data: allPosts } = usePreviewSubscription(indexQuery, {
     initialData: initialAllPosts,
     enabled: preview,
   })
+  // const {data: allPosts} = usePreviewSubscription(indexQuery, {initialData: initialAllPosts, enabled: preview})
   const [heroPost, ...morePosts] = allPosts || []
+
+  if (preview) {
+    return (
+    <PreviewSuspense fallback={allPosts}>
+      <PreviewDocumentsCount/>
+      <div>preview</div>
+    </PreviewSuspense>
+    )
+  }
   return (
     <>
       <Layout preview={preview}>
@@ -48,11 +69,4 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
   )
 }
 
-export async function getStaticProps({ preview = false }) {
-  const allPosts = overlayDrafts(await getClient(preview).fetch(indexQuery))
-  return {
-    props: { allPosts, preview },
-    // If webhooks isn't setup then attempt to re-generate in 1 minute intervals
-    revalidate: process.env.SANITY_REVALIDATE_SECRET ? undefined : 60,
-  }
-}
+

@@ -18,7 +18,6 @@ export default function Home({allPosts: initialAllPosts,  preview }) {
   })
   const [heroPost] = allPosts || []
   return (
-    <>
       <Layout preview={preview}>
         <Head>
           <title>DEW | Home</title>
@@ -50,7 +49,6 @@ export default function Home({allPosts: initialAllPosts,  preview }) {
           <Table/>
         </Container>
       </Layout>
-    </>
   )
 }
 

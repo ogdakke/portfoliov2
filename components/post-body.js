@@ -23,8 +23,8 @@ export default function PostBody(props) {
       const imgUrl = urlForImage(value.asset).height(height).width(width).url()
       return (
         <figure>
-          <Link href={imgUrl} target="_blank" value={value.alt}>
-          <Image
+          <a href={imgUrl} target="_blank" title={value.alt}>
+        <Image
             className="rounded-xl shadow-xl"
             width={width}
             height={height}
@@ -35,7 +35,7 @@ export default function PostBody(props) {
             placeholder="blur"
             blurDataURL={value.asset.metadata.lqip}
             />
-            </Link>
+          </a>
           
           <p className='px-2 text-accent-4'>{value.alt}</p>
         </figure>
