@@ -22,7 +22,7 @@ export default function PostBody(props) {
       const imgUrl = urlForImage(value.asset).height(height).width(width).url()
       return (
         <figure>
-
+          
           <Image
             className="rounded-xl shadow-xl"
             width={width}
