@@ -1,13 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import {PortableText} from '@portabletext/react'
+import React from "react";
+import PropTypes from "prop-types";
+import { PortableText } from "@portabletext/react";
 
 function SimpleBlockContent(props) {
-  const {blocks} = props
+  const { blocks } = props;
 
   if (!blocks) {
-    console.error('Missing blocks')
-    return null
+    console.error("Missing blocks");
+    return null;
   }
 
   return (
@@ -20,11 +20,11 @@ function SimpleBlockContent(props) {
         },
       }}
     />
-  )
+  );
 }
 
 SimpleBlockContent.propTypes = {
   blocks: PropTypes.arrayOf(PropTypes.object),
-}
+};
 
-export default SimpleBlockContent
+export default SimpleBlockContent;

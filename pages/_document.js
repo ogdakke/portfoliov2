@@ -1,6 +1,6 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Html, Head, Main, NextScript } from "next/document";
 
-export default function Document({children}) {
+export default function Document({ children }) {
   return (
     <Html lang="en">
       <Head />
@@ -10,5 +10,5 @@ export default function Document({children}) {
         <NextScript />
       </body>
     </Html>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import { HOME_OG_IMAGE_URL } from '../lib/constants'
+import Head from "next/head";
+import { HOME_OG_IMAGE_URL } from "../lib/constants";
 
 export default function Meta() {
   return (
@@ -22,7 +22,7 @@ export default function Meta() {
         href="/favicon/favicon@16px.png"
       />
       <link rel="manifest" href="/favicon/site.webmanifest" />
-    
+
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
       <meta name="msapplication-TileColor" content="#161616" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
@@ -34,5 +34,5 @@ export default function Meta() {
       */}
       <meta property="og:image" content={HOME_OG_IMAGE_URL} key="ogImage" />
     </Head>
-  )
+  );
 }
