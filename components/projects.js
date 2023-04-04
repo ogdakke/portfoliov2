@@ -1,4 +1,5 @@
 import { OpenNewWindow } from "iconoir-react";
+import SectionSeparator from "./section-separator";
 
 export const Projects = () => {
   const salasanakone = {
@@ -20,7 +21,7 @@ export const Projects = () => {
       {
         projects.map((projectObj) => {
           return (
-            <div className="flex gap-4">
+            <div className="flex flex-col  md:flex-row gap-4 ">
               <a
               target="_blank"
               className="flex gap-1 py-2 px-4 w-fit bg-accent-3 font-medium rounded-xl border border-accent-4 hover:invert transition-all 200ms"
