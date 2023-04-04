@@ -26,8 +26,8 @@ module.exports = {
 
         success: '#0070f3',
         cyan: '#79FFE1',
-        bgPrimary: '#161616',
-        bgLight: '#EFEFEF'
+        bgPrimary: '#000',
+        bgLight: '#FFFFFF'
       },
       animation: {
         'pulse-slow': 'pulse 4s infinite'

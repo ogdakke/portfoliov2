@@ -15,8 +15,8 @@ export default function Navbar() {
     return null;
   }
   return (
-    <div className="z-50 flex justify-center w-screen fixed bottom-6 h-min px-3">
-      <nav className="flex flex-row justify-between w-full relative p-5 bg-accent-4/50 dark:bg-accent-1/40 backdrop-blur-xl max-w-2xl rounded-3xl">
+    <div className="z-50 flex justify-center w-full fixed bottom-6 h-min px-3">
+      <nav className="border border-accent-3/10 flex flex-row justify-between w-full relative p-5 bg-accent-4/50 dark:bg-accent-1/40 backdrop-blur-xl max-w-3xl rounded-3xl">
         <div className="fill-accent-5/90 dark:fill-accent-3 text-accent-5 dark:text-accent-3 flex flex-row gap-6">
           <Link
             className="flex items-center gap-1 text-lg pl-3 pr-4 py-1 border border-transparent hover:bg-bgLight dark:hover:bg-bgPrimary transition-all duration-150 rounded-3xl"

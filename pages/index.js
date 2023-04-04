@@ -1,16 +1,14 @@
 import Head from "next/head";
-import Links from "../components/links";
 import Container from "../components/container";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
 import SectionSeparator from "../components/section-separator";
-import Table from "../components/table";
 import HeroPost from "../components/hero-post";
 import { indexQuery } from "../lib/queries";
 import { usePreviewSubscription } from "../lib/sanity";
 import { getClient, overlayDrafts } from "../lib/sanity.server";
 import HeroLanding from "../components/hero-landing";
-
+import { Projects } from "../components/projects";
 export default function Home({ allPosts: initialAllPosts, preview }) {
   const { data: allPosts } = usePreviewSubscription(indexQuery, {
     initialData: initialAllPosts,
@@ -47,8 +45,9 @@ export default function Home({ allPosts: initialAllPosts, preview }) {
           </>
         )}
         <SectionSeparator />
-        <Links />
-        <Table />
+        <Projects />
+        {/* <Links /> */}
+        {/* <Table /> */}
       </Container>
     </Layout>
   );

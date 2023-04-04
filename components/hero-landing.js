@@ -1,17 +1,21 @@
+import { City, Learning } from "iconoir-react";
+
 export default function HeroLanding() {
   return (
     <>
       <h3 className="text-3xl py-20 md:pb-64 break-words">
-        Web developer and designer with a passion for beautiful, fast and simple
+        I'm a web developer and designer with a passion for beautiful, fast and simple
         websites. <br /> I create visually pleasing experiences with a precise
         touch.
       </h3>
       <h4 className="text-xl"> Currently doing:</h4>{" "}
-      <h4 className="text-xl dark:text-accent-4 text-accent-2 leading-relaxed">
-        🏫University: Studying Information Systems.
+      <h4 className="flex gap-1 text-xl dark:text-accent-4 text-accent-2 leading-relaxed">
+        <City width={24}/>
+        University: Studying Information Systems.
       </h4>
-      <h4 className="text-xl text-accent-2 dark:text-accent-4">
-        🧠Learning: React, backend development.
+      <h4 className="flex gap-1 text-xl text-accent-2 dark:text-accent-4">
+        <Learning width={24}/>
+        Learning: React, backend development.
       </h4>
       <div className="pt-8 flex justify-center align-middle animate-pulse-slow dark:stroke-accent-3 stroke-accent-2">
         <svg

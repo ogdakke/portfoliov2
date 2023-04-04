@@ -21,6 +21,7 @@
     "bcp47": "^1.1.2",
     "classnames": "^2.3.1",
     "date-fns": "^2.29.1",
+    "iconoir-react": "^6.5.0",
     "next": "^13.1.5",
     "next-sanity": "^1.1.0",
     "next-themes": "^0.2.1",
