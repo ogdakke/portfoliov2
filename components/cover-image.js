@@ -10,7 +10,7 @@ export default function CoverImage({ title, slug, image: source, priority }) {
     // If an image has been provided, render the image with a shadow effect
     // and wrap it in a link to the post page if a slug has been provided
     <Image
-      className=" w-full h-auto rounded-3xl lg:rounded-4xl shadow-xl"
+      className=" lg:rounded-4xl h-auto w-full rounded-3xl shadow-xl"
       width={2000}
       height={1200}
       alt={`Cover Image for ${title}`}
@@ -23,8 +23,8 @@ export default function CoverImage({ title, slug, image: source, priority }) {
     />
   ) : (
     // If no image has been provided, render the post title in a box
-    <div className="bg-bgPrimary border color-accent-1 rounded-xl lg:rounded-3xl align-content-middle">
-      <h1 className=" text-5xl text-center align-text-middle">{title}</h1>
+    <div className="color-accent-1 align-content-middle rounded-xl border bg-bgPrimary lg:rounded-3xl">
+      <h1 className=" align-text-middle text-center text-5xl">{title}</h1>
     </div>
   );
   return (

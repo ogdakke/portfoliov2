@@ -4,7 +4,7 @@ export default function Document({ children }) {
   return (
     <Html lang="en">
       <Head />
-      <body className="dark:bg-bgPrimary bg-bgLight dark:text-accent-3 text-accent-5 ">
+      <body className="bg-bgLight text-accent-5 dark:bg-bgPrimary dark:text-accent-3 ">
         <Main />
         {children}
         <NextScript />

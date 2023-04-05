@@ -5,22 +5,22 @@ export default function Footer() {
   return (
     <footer className="mt-10 mb-20 border-t border-accent-2">
       <Container>
-        <div className="pb-16 pt-8 lg:py-16 flex flex-col ">
+        <div className="flex flex-col pb-16 pt-8 lg:py-16 ">
           <Link
             href="https://github.com/ogdakke"
             title="My GitHub Profile"
             className="
-          text-accent-5 
-          fill-accent-5
-          dark:text-accent-3
-            dark:fill-accent-3
-          opacity-85
-          hover:opacity-100
-           flex gap-1
-           hover:underline 
-           transition-all
-           items-center 
-           w-fit lg:m-4 p-4 text-md lg:text-lg tracking-tighter leading-tight lg:text-left mb-6 lg:mb-0 lg:pr-4 
+          opacity-85 
+          text-md
+          mb-6
+            flex
+          w-fit
+          items-center
+           gap-1 fill-accent-5
+           p-4 
+           leading-tight
+           tracking-tighter 
+           text-accent-5 transition-all hover:underline hover:opacity-100 dark:fill-accent-3 dark:text-accent-3 lg:m-4 lg:mb-0 lg:pr-4 lg:text-left lg:text-lg 
            "
           >
             GitHub
@@ -42,17 +42,17 @@ export default function Footer() {
             href="mailto:contactdew@proton.me"
             title="My Email"
             className="
-          text-accent-5 
-          fill-accent-5
-          dark:text-accent-3
-          dark:fill-accent-3
-          opacity-85
-          hover:opacity-100
-          flex gap-1
-          hover:underline 
-          transition-all
-          items-center 
-          w-fit lg:m-4 p-4 text-md lg:text-lg tracking-tighter leading-tight lg:text-left mb-6 lg:mb-0 lg:pr-4 
+          opacity-85 
+          text-md
+          mb-6
+          flex
+          w-fit
+          items-center
+          gap-1 fill-accent-5
+          p-4 
+          leading-tight
+          tracking-tighter 
+          text-accent-5 transition-all hover:underline hover:opacity-100 dark:fill-accent-3 dark:text-accent-3 lg:m-4 lg:mb-0 lg:pr-4 lg:text-left lg:text-lg 
            "
           >
             Email
@@ -70,7 +70,7 @@ export default function Footer() {
               <path d="M5 5C3.89543 5 3 5.89543 3 7V15C3 16.1046 3.89543 17 5 17H13C14.1046 17 15 16.1046 15 15V12C15 11.4477 14.5523 11 14 11C13.4477 11 13 11.4477 13 12V15H5V7L8 7C8.55228 7 9 6.55228 9 6C9 5.44772 8.55228 5 8 5H5Z" />
             </svg>
           </Link>
-          <p className="lg:m-4 p-4 text-md lg:text-lg tracking-tighter leading-tight lg:text-left mb-10 lg:mb-0 lg:pr-4">
+          <p className="text-md mb-10 p-4 leading-tight tracking-tighter lg:m-4 lg:mb-0 lg:pr-4 lg:text-left lg:text-lg">
             Made by DEW 2023
           </p>
         </div>

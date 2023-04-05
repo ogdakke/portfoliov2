@@ -21,11 +21,11 @@ export default function PostPreview({
           {title}
         </Link>
       </h3>
-      <div className="mb-4 text-s ">
+      <div className="mb-4 text-xs opacity-80 ">
         <Date dateString={date} />
       </div>
-      <p className="mb-4 text-md leading-relaxed">{excerpt}</p>
-      {author && <Avatar name={author.name} picture={author.picture} />}
+      <p className="text-md mb-4 leading-relaxed opacity-95">{excerpt}</p>
+      {/* {author && <Avatar name={author.name} picture={author.picture} />} */}
     </div>
   );
 }

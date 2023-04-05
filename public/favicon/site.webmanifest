@@ -16,11 +16,11 @@
       "purpose": "maskable any"
     }
   ],
-  "theme_color": "#161616",
-  "background_color": "#161616",
+  "theme_color": "#000",
+  "background_color": "#000",
   "display": "standalone",
   "description": "Web-app for DEW website.",
   "orientation": "portrait-primary",
-  "id": "https://deweloper.fi/",
+  "id": "/",
   "lang": "fi"
 }

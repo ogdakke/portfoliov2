@@ -48,7 +48,7 @@ export default function PostBody(props) {
 
   return (
     <>
-      <div className={`max-w-2xl mx-auto ${markdownStyles.markdown}`}>
+      <div className={`mx-auto max-w-2xl ${markdownStyles.markdown}`}>
         <PortableText value={content} components={components} />
       </div>
     </>

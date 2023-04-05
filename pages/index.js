@@ -32,7 +32,7 @@ export default function Home({ allPosts: initialAllPosts, preview }) {
         <SectionSeparator />
         {heroPost && (
           <>
-            <p className="z-10 text-accent-7 absolute m-2 rounded-2xl text-lg bg-accent-3 w-max py-2 px-4">
+            <p className="absolute z-10 m-2 w-max rounded-2xl bg-accent-3 py-2 px-4 text-lg text-accent-7">
               New in blog!
             </p>
             <HeroPost

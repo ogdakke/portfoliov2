@@ -3,11 +3,11 @@ import Link from "next/link";
 const Links = () => {
   return (
     <div className="flex flex-col gap-2">
-      <h1 className="text-3xl py-3">Links:</h1>
+      <h1 className="py-3 text-3xl">Links:</h1>
       <ul className="flex gap-6 pb-4">
         <li className="">
           <Link
-            className="flex justify-center items-center gap-2 bg-accent-2/25 border border-transparent dark:hover:border-accent-3 hover:border-accent-5 transition-colors text-xl  px-4 py-2 rounded-full"
+            className="flex items-center justify-center gap-2 rounded-full border border-transparent bg-accent-2/25 px-4 py-2 text-xl  transition-colors hover:border-accent-5 dark:hover:border-accent-3"
             href={"https://github.com/ogdakke"}
           >
             <svg
@@ -26,7 +26,7 @@ const Links = () => {
         </li>
         <li className="flex">
           <Link
-            className="flex justify-center items-center gap-2 bg-accent-2/25 border border-transparent dark:hover:border-accent-3 hover:border-accent-5 transition-colors text-xl  px-4 py-2 rounded-full"
+            className="flex items-center justify-center gap-2 rounded-full border border-transparent bg-accent-2/25 px-4 py-2 text-xl  transition-colors hover:border-accent-5 dark:hover:border-accent-3"
             href={"mailto:contactdew@proton.me"}
           >
             <svg
@@ -37,11 +37,11 @@ const Links = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                className="dark:fill-accent-3 fill-accent-5"
+                className="fill-accent-5 dark:fill-accent-3"
                 d="M2.00333 5.88355L9.99995 9.88186L17.9967 5.8835C17.9363 4.83315 17.0655 4 16 4H4C2.93452 4 2.06363 4.83318 2.00333 5.88355Z"
               />
               <path
-                className="dark:fill-accent-3 fill-accent-5"
+                className="fill-accent-5 dark:fill-accent-3"
                 d="M18 8.1179L9.99995 12.1179L2 8.11796V14C2 15.1046 2.89543 16 4 16H16C17.1046 16 18 15.1046 18 14V8.1179Z"
               />
             </svg>

@@ -48,7 +48,7 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
         <Container>
           <BlogIntro />
           <SectionSeparator />
-          <p className="z-10 text-accent-7 absolute m-2 rounded-full lg:text-2xl text-lg bg-accent-3 w-max py-2 px-4">
+          <p className="absolute z-10 m-2 w-max rounded-full bg-accent-3 py-2 px-4 text-lg text-accent-7 lg:text-2xl">
             New in blog!
           </p>
           {heroPost && (
