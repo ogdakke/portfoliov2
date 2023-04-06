@@ -43,7 +43,7 @@ let isMounted = false
       <p>
         language: <span className="opacity-70">{language}</span>
       </p>
-    </div>
+      </div>
       <div className="px-2 py-4flex bg-[#fafafa] dark:bg-accent-5/50  max-h-[42rem] rounded-lg overflow-y-scroll scrollbar-hide">
           <div className='flex w-full pr-6 justify-end absolute'>
             <button 

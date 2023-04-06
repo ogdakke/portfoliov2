@@ -42,7 +42,7 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
           <meta
             name="description"
             key="blog-description"
-            content="DEW's blog. I post about web-development, web design and other stuff."
+            content="DWE's blog. I post about web-development, web design and other stuff."
           />
         </Head>
         <Container>
