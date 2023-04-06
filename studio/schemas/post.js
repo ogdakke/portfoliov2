@@ -41,6 +41,15 @@ export default {
           hotspot: true
         }
       },
+      {
+        name: "code",
+        title: "Code Block",
+        type: "code",
+        options: {
+          withFilename: true,
+          highlightedLines: true,
+        },
+      }
       
     ]
     },

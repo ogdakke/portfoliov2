@@ -2,6 +2,7 @@
 import { defineConfig } from "sanity"
 import { deskTool } from "sanity/desk"
 import { visionTool } from "@sanity/vision"
+import { codeInput } from "@sanity/code-input"
 // import deskStructure from "./studio/deskStructure"; //Jos tämän laittaa, niin pitäsi rakentaa sivurakenne uusiks.
 import schemas from "./schemas/schema";
 import {
@@ -22,6 +23,7 @@ export default defineConfig({
       // }
     ),
     visionTool(),
+    codeInput(),
     dashboardTool({
       widgets: [
         projectInfoWidget({
