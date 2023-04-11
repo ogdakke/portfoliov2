@@ -14,14 +14,9 @@ export default function Navbar() {
 
   let pathname = usePathname() || "/"
   
-  if (window !== undefined) {
     if (pathname.includes("/Blog/")) {
-      pathname = "/Blog"
+    pathname = "/Blog"
     }
-  } else {
-    return null;
-  }
-
   let mount = false;
   // run useEffect, to make sure that correct theme is rendered
   useEffect(() => {
