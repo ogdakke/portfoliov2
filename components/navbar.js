@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
@@ -10,9 +12,12 @@ export default function Navbar() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  let pathname = usePathname()
-  if (pathname.includes("/Blog/")) {
-    pathname = "/Blog"
+  let pathname = usePathname() || "/"
+
+  if (window !== undefined) {
+    if (pathname.includes("/Blog/")) {
+      pathname = "/Blog"
+    }
   }
 
   let mount = false;
@@ -97,8 +102,8 @@ export default function Navbar() {
                   rounded-lg
                   z-[-1]`}> 
                 </span>
-                : null
-                }
+                : null}
+                
                 {item.logo.element}
                 {item.title}
               </Link>
