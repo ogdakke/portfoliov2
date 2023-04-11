@@ -36,7 +36,9 @@ export const Projects = () => {
                   className="200ms flex w-fit gap-1 rounded-xl border 
                   border-accent-4
                   bg-bgLight py-2 px-4 invert transition-all hover:invert-0
-                  dark:bg-bgPrimary"
+                  dark:bg-bgPrimary
+                  font-bold
+                  dark:font-normal"
                   href={projectObj.url}
                 >
                   {projectObj.name}

@@ -1,11 +1,19 @@
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
-import { Book, Home, SeaAndSun } from "iconoir-react";
+import { Book, GitHub, Home, SeaAndSun } from "iconoir-react";
+import { usePathname } from 'next/navigation';
+
+
 
 export default function Navbar() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  let pathname = usePathname()
+  if (pathname.includes("/Blog/")) {
+    pathname = "/Blog"
+  }
 
   let mount = false;
   // run useEffect, to make sure that correct theme is rendered
@@ -36,8 +44,15 @@ export default function Navbar() {
       element: <Book label="Logo of Blog button" width={size} height={size} />,
     },
   };
+  const github = {
+    url: "https://github.com/ogdakke",
+    title: "",
+    logo: {
+      element: <GitHub label="Logo of GitHub" width={size} height={size} />,
+    },
+  };
 
-  const menuItems = [home, blog];
+  const menuItems = [home, blog, github];
 
   return (
     <div
@@ -45,7 +60,7 @@ export default function Navbar() {
     >
       <nav
         className="dark: relative flex w-full max-w-3xl flex-row justify-between 
-      rounded-3xl 
+      rounded-2xl 
       border 
       border-accent-3/10 
       bg-accent-4/50
@@ -57,20 +72,33 @@ export default function Navbar() {
       >
         <div
           className="
-        flex flex-row gap-6
-        fill-accent-5/90 
-        text-accent-5 
-        dark:fill-accent-3 
-        dark:text-accent-3 
-        "
+          relative
+          flex flex-row gap-6
+          fill-accent-5/90 
+          text-accent-5 
+          dark:fill-accent-3 
+          dark:text-accent-3
+          "
         >
           {menuItems.map((item) => {
             return (
               <Link
                 key={item.title}
-                className="flex items-center gap-1 rounded-3xl border border-transparent py-1 pl-3 pr-4 text-lg transition-all duration-150 hover:bg-bgLight dark:hover:bg-bgPrimary"
+                className={`relative flex items-center gap-1 rounded-lg py-1 
+                px-3 
+                text-lg transition-all duration-150 
+                hover:bg-bgLight/75 dark:hover:bg-bgPrimary/75`}
                 href={item.url}
+                
+                
               >
+                {pathname === item.url ? 
+                <span className={`absolute inset-0 bg-bgLight/25 dark:bg-bgPrimary/25
+                  rounded-lg
+                  z-[-1]`}> 
+                </span>
+                : null
+                }
                 {item.logo.element}
                 {item.title}
               </Link>
@@ -84,11 +112,13 @@ export default function Navbar() {
             aria-label="Toggle Dark Mode"
             title="Toggle Dark Mode"
             className="
-            rounded-3xl 
-            stroke-accent-5 
+            rounded-lg 
+            hover:bg-bgLight/75
+            dark:hover:bg-bgPrimary/75
+          stroke-accent-5 
             p-1.5 opacity-75 transition-all hover:opacity-100 dark:stroke-accent-3"
           >
-            <SeaAndSun width={28} height={28} />
+            <SeaAndSun strokeWidth={1.45} width={28} height={28} />
           </button>
         </div>
       </nav>

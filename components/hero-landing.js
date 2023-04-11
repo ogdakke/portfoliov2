@@ -42,7 +42,6 @@ export default function HeroLanding() {
         id="halfway"
         className="flex animate-pulse-slow items-center justify-center gap-1 stroke-accent-2 pt-8 dark:stroke-accent-3"
       >
-        scroll{" "}
         {isDivHalfwayUp ? (
           <EmojiLookDown width={28} height={28} />
         ) : (
