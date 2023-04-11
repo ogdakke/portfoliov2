@@ -13,11 +13,13 @@ export default function Navbar() {
   const { theme, setTheme } = useTheme();
 
   let pathname = usePathname() || "/"
-
+  
   if (window !== undefined) {
     if (pathname.includes("/Blog/")) {
       pathname = "/Blog"
     }
+  } else {
+    return null;
   }
 
   let mount = false;
@@ -103,7 +105,7 @@ export default function Navbar() {
                   z-[-1]`}> 
                 </span>
                 : null}
-                
+
                 {item.logo.element}
                 {item.title}
               </Link>
