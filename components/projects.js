@@ -49,7 +49,6 @@ export const Projects = () => {
                 {projectObj.post.hasPost ? (
                   <Link
                     href={projectObj.post.postUrl}
-                    target="_blank"
                     title={`Blog post on ${projectObj.name}`}
                     className="200ms flex w-fit items-center gap-2 rounded-xl bg-bgLight py-2 px-3 transition-all hover:invert dark:bg-bgPrimary"
                   >

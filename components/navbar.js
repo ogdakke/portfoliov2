@@ -19,7 +19,7 @@ export default function Navbar() {
   let pathname = usePathname() || "/"
   
   if (pathname.includes("/Blog/")) {
-  pathname = "/Blog"
+    pathname = "/Blog"
   }
 
   // run useEffect, to make sure that correct theme is rendered
@@ -64,7 +64,8 @@ export default function Navbar() {
         className="dark: relative flex w-full max-w-3xl flex-row justify-between 
       rounded-2xl 
       border 
-      border-accent-3/10 
+      border-accent-5/5
+      dark:border-accent-3/10 
       bg-accent-4/50
       p-3
       shadow-2xl 
@@ -90,9 +91,7 @@ export default function Navbar() {
                 px-3 
                 text-lg transition-all duration-150 
                 hover:bg-bgLight/75 dark:hover:bg-bgPrimary/75`}
-                href={item.url}
-                
-                
+                href={item.url} 
               >
                 {pathname === item.url ? 
                 <span className={`absolute inset-0 bg-bgLight/25 dark:bg-bgPrimary/50
@@ -100,7 +99,6 @@ export default function Navbar() {
                   z-[-1]`}> 
                 </span>
                 : null}
-
                 {item.logo.element}
                 {item.title}
               </Link>

@@ -17,6 +17,8 @@ module.exports = {
         "accent-5": "#121212",
         "accent-6": "#1e1e1e",
         "accent-7": "#333",
+        "accent-8": "#f4f4f4",
+        "accent-solid-white": "#fafafa",
         "white-shadow": "rgba(100, 100, 100, 0.05)",
         "dark-shadow": "rgba(0, 0, 0, 0.1)",
         "code-text": "#ff8f40",

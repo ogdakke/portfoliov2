@@ -1,6 +1,4 @@
 import copyToClipboard from '../tools/copyToClipboard';
-// import Check from 'iconoir-react/dist/Check';
-// import Copy from 'iconoir-react/dist/Copy';
 import { Check, Copy } from 'iconoir-react';
 import { useEffect, useState } from 'react';
 import { useTheme } from "next-themes";
@@ -12,18 +10,12 @@ import vsDark from "prism-react-renderer/themes/vsDark"
 const CodeBlock = ({data}) => {
   const [isCopied, setCopied] = useState(false)
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const copy = () => {
     setCopied(true)
     setTimeout(() => setCopied(false), 1100)
   }
 
-  useEffect(() => {
-    console.log(theme);
-    if (window !== undefined) {
-
-    }
-  }, [])
 
   const code = data.code
   const filename = data.filename
@@ -62,28 +54,43 @@ const CodeBlock = ({data}) => {
 
 
   return (
-    <div className="relative shadow-lg dark:shadow-none bg-accent-4/10 dark:bg-accent-5/25 px-3 pb-3 pt-1 rounded-xl my-6">
-      <div className="flex justify-between ">
-      <p className='opacity-70'>
-        {filename}
-      </p>
-      <p>
-        language: <span className="opacity-70">{language}</span>
-      </p>
+    <div className="border dark:border-accent-5/50 shadow-lg dark:shadow-none bg-accent-4/10 dark:bg-accent-5/25 px-3 pb-3 pt-1 rounded-xl my-6">
+      <div className="flex justify-between mb-1">
+      <div className="flex">
+        {filename ? 
+         <p className='opacity-70 pr-4'>
+          {filename}
+        </p>
+        : null}
+        {language !== "batchfile" ? 
+        <p>
+          lang: <span className="opacity-70">{language}</span>
+        </p>
+        : null}
       </div>
-      <div className=" py-4 bg-[#fafafa] dark:bg-accent-5/50  max-h-[42rem] rounded-lg overflow-y-scroll scrollbar-hide">
-          <div className='flex w-full pr-6 justify-end absolute'>
-            <button 
-            onClick={async () => {
-              await copyToClipboard(code)
-              copy()
-            }}
-            className='200ms py-2 px-3 opacity-75 transition-opacity hover:opacity-100 '>
-              {isCopied 
-              ? <Check  width={30} height={30}/>
-              : <Copy strokeWidth={1.5} width={30} height={30} />}
-            </button>
-            </div> 
+      <button 
+        onClick={async () => {
+          await copyToClipboard(code)
+          copy()
+        }}
+        className='
+        bg-accent-8
+        border
+        dark:border-accent-4/5
+        shadow-sm
+        dark:bg-accent-5
+        rounded-md
+        opacity-70
+        200ms py-1.5 px-2 transition-opacity hover:opacity-100 '>
+          {isCopied 
+          ? <Check  width={30} height={30}/>
+          : <Copy width={30} height={30} />}
+      </button>
+      </div>
+      <div className=" py-4 bg-accent-solid-white shadow dark:bg-accent-5/50  max-h-[36rem] sm:max-h-[46rem] rounded-lg overflow-y-scroll scrollbar-hide">
+          {/* <div className='flex w-full pr-8 justify-end absolute'>
+            
+            </div>  */}
             <Highlight  {...defaultProps} 
             theme={codeTheme} 
             code={code} language={language}>
