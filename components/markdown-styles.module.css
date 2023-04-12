@@ -29,6 +29,9 @@
 .markdown blockquote {
   @apply border-l-4 border-accent-1 pl-2;
 }
+.markdown code {
+  @apply font-bold opacity-80
+}
 .markdown h1 {
   @apply mt-12 mb-8 text-6xl leading-snug;
 }

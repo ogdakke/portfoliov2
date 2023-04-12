@@ -18,17 +18,13 @@ export default function Navbar() {
 
   let pathname = usePathname() || "/"
   
-    if (pathname.includes("/Blog/")) {
-    pathname = "/Blog"
-    }
-  let mount = false;
+  if (pathname.includes("/Blog/")) {
+  pathname = "/Blog"
+  }
+
   // run useEffect, to make sure that correct theme is rendered
   useEffect(() => {
-    if (!mount) {
-      mount = true;
-      setMounted(true);
-    }
-    return () => (mount = false);
+    setMounted(true);
   }, []);
 
   if (!mounted) {
@@ -114,7 +110,7 @@ export default function Navbar() {
         <div className="flex justify-self-end">
           <button
             // really nice way to set the theme. Borrowed from https://github.com/leerob/leerob.io/blob/main/components/Container.tsx
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             aria-label="Toggle Dark Mode"
             title="Toggle Dark Mode"
             className="

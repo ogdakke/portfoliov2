@@ -7,7 +7,9 @@ import Layout from "../../components/layout";
 import { indexQuery } from "../../lib/queries";
 import { getClient, overlayDrafts } from "../../lib/sanity.server";
 import SectionSeparator from "../../components/section-separator";
+
 import { usePreviewSubscription } from "../../lib/sanity";
+import { PreviewSuspense }from "next-sanity"
 
 export async function getStaticProps({ preview = false }) {
   const allPosts = overlayDrafts(await getClient(preview).fetch(indexQuery));
@@ -28,8 +30,9 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
 
   if (preview) {
     return (
+      // <></>
       <PreviewSuspense fallback={allPosts}>
-        <PreviewDocumentsCount />
+         <PreviewDocumentsCount />
         <div>preview</div>
       </PreviewSuspense>
     );
@@ -48,7 +51,7 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
         <Container>
           <BlogIntro />
           <SectionSeparator />
-          <p className="absolute z-10 m-2 w-max rounded-full bg-accent-3 py-2 px-4 text-lg text-accent-7 lg:text-2xl">
+          <p className="absolute z-10 m-2 w-max rounded-md bg-accent-3 py-2 px-4 text-lg text-accent-7 lg:text-2xl">
             New in blog!
           </p>
           {heroPost && (

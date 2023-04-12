@@ -11,12 +11,19 @@ import vsDark from "prism-react-renderer/themes/vsDark"
 
 const CodeBlock = ({data}) => {
   const [isCopied, setCopied] = useState(false)
-  const { theme, setTheme } = useTheme();
-  
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const copy = () => {
     setCopied(true)
     setTimeout(() => setCopied(false), 1100)
   }
+
+  useEffect(() => {
+    console.log(theme);
+    if (window !== undefined) {
+
+    }
+  }, [])
 
   const code = data.code
   const filename = data.filename
@@ -32,18 +39,27 @@ const CodeBlock = ({data}) => {
       }
     } else return null
   } 
-  const [lines, setLines] = useState([])
 
 
-let isMounted = false
-  useEffect(() => {
-    if (!isMounted) {
-      isMounted = true
-      setTheme(theme)
-      setLines(highlightedLines)
-    }    
-    return () => isMounted = false
-  }, [theme, lines])
+ // run useEffect, to make sure that correct theme is rendered
+ useEffect(() => {
+  setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
+
+  let codeTheme = github
+  if (resolvedTheme === "light") {
+    codeTheme = github
+  }
+  if (resolvedTheme === "dark") {
+    codeTheme = vsDark
+  }
+
+
 
   return (
     <div className="relative shadow-lg dark:shadow-none bg-accent-4/10 dark:bg-accent-5/25 px-3 pb-3 pt-1 rounded-xl my-6">
@@ -69,7 +85,8 @@ let isMounted = false
             </button>
             </div> 
             <Highlight  {...defaultProps} 
-            theme={theme === "light" ? github : vsDark} code={code} language={language}>
+            theme={codeTheme} 
+            code={code} language={language}>
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
               <pre className={`${className} !bg-transparent px-2`} style={style}>
                 {tokens.map((line, i) => {
