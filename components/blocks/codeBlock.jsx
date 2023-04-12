@@ -1,5 +1,6 @@
 import copyToClipboard from '../tools/copyToClipboard';
-import { Check, Copy } from 'iconoir-react';
+import Check from 'iconoir-react/dist/Check';
+import Copy from 'iconoir-react/dist/Copy';
 import { useEffect, useState } from 'react';
 import { useTheme } from "next-themes";
 
