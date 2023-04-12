@@ -95,7 +95,7 @@ export default function Navbar() {
                 
               >
                 {pathname === item.url ? 
-                <span className={`absolute inset-0 bg-bgLight/25 dark:bg-bgPrimary/25
+                <span className={`absolute inset-0 bg-bgLight/25 dark:bg-bgPrimary/50
                   rounded-lg
                   z-[-1]`}> 
                 </span>

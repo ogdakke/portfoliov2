@@ -1,3 +1,4 @@
+import React from "react";
 import markdownStyles from "./markdown-styles.module.css";
 import { PortableText } from "@portabletext/react";
 import { urlForImage } from "../lib/sanity";
@@ -7,7 +8,7 @@ import Image from "next/image";
 // import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 // import Link from 'next/link'
 
-export default function PostBody(props) {
+export default function PostBody(props: { content: any; }) {
   const { content } = props;
 
   const components = {
@@ -44,14 +45,7 @@ export default function PostBody(props) {
         );
       },
       code: ({value}) => {
-        return (
-          <>
-          <CodeBlock data={ value } />
-          {/* <code>
-            {value.code}
-          </code> */}
-        </> 
-        )
+        return <CodeBlock data={ value } />
       }
     },
   };
