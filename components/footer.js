@@ -1,5 +1,5 @@
 import Container from "./container";
-import OpenNewWindow from "iconoir-react/dist/OpenNewWindow";
+import { OpenNewWindow } from "iconoir-react";
 
 export default function Footer() {
 

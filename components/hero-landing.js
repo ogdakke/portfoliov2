@@ -1,7 +1,8 @@
-import City from "iconoir-react/dist/City";
-import EmojiLookDown from "iconoir-react/dist/EmojiLookDown";
-import EmojiLookUp from "iconoir-react/dist/EmojiLookUp";
-import Learning from "iconoir-react/dist/Learning";
+// import City from "iconoir-react/dist/City";
+// import EmojiLookDown from "iconoir-react/dist/EmojiLookDown";
+// import EmojiLookUp from "iconoir-react/dist/EmojiLookUp";
+// import Learning from "iconoir-react/dist/Learning";
+import { City, EmojiLookDown, EmojiLookUp, Learning } from "iconoir-react";
 import { useState, useEffect } from "react";
 export default function HeroLanding() {
   const [isDivHalfwayUp, setIsDivHalfwayUp] = useState(false);

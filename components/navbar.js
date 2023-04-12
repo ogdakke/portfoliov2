@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
-import Book from "iconoir-react/dist/Book";
-import GitHub from "iconoir-react/dist/GitHub";
-import Home from "iconoir-react/dist/Home";
-import SeaAndSun from "iconoir-react/dist/Book";
+// import Book from "iconoir-react/dist/Book";
+// import GitHub from "iconoir-react/dist/GitHub";
+// import Home from "iconoir-react/dist/Home";
+// import SeaAndSun from "iconoir-react/dist/Book";
+import { Book, GitHub, Home, SeaAndSun } from "iconoir-react";
 import { usePathname } from 'next/navigation';
 
 

@@ -1,5 +1,6 @@
-import Book from "iconoir-react/dist/Book";
-import OpenNewWindow from "iconoir-react/dist/OpenNewWindow";
+// import Book from "iconoir-react/dist/Book";
+// import OpenNewWindow from "iconoir-react/dist/OpenNewWindow";
+import { Book, OpenNewWindow } from "iconoir-react";
 import Link from "next/link";
 
 const salasanakone = {
