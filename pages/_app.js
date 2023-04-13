@@ -7,7 +7,7 @@ const interVariable = Inter({subsets: ["latin"] });
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider attribute="class" enableSystem={true}>
+    <ThemeProvider attribute="class" enableSystem={true} disableTransitionOnChange>
       <main className={interVariable.className}>
         <Component {...pageProps} />
         <Analytics />

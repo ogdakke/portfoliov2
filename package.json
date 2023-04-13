@@ -10,6 +10,7 @@
   "dependencies": {
     "@next/font": "^13.1.5",
     "@portabletext/react": "^2.0.0",
+    "@radix-ui/react-dialog": "^1.0.3",
     "@radix-ui/react-tooltip": "^1.0.2",
     "@sanity/client": "^4.0.1",
     "@sanity/icons": "^2.2.2",
@@ -18,7 +19,9 @@
     "@sanity/webhook": "^2.0.0",
     "@vercel/analytics": "^0.1.6",
     "bcp47": "^1.1.2",
+    "class-variance-authority": "^0.5.2",
     "classnames": "^2.3.1",
+    "clsx": "^1.2.1",
     "date-fns": "^2.29.1",
     "iconoir-react": "^6.1.0",
     "next": "^13.1.5",
@@ -29,8 +32,10 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-simple-image-viewer": "^1.2.2",
     "sanity": "^3.2.5",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "tailwind-merge": "^1.12.0"
   },
   "devDependencies": {
     "@types/prismjs": "^1.26.0",

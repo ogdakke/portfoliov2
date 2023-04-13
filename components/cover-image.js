@@ -32,7 +32,7 @@ export default function CoverImage({ title, slug, image: source, priority }) {
       {/* This line of code is using the Ternary operator to conditionally render a link to the post page
           if a slug has been provided, otherwise it will just render the image or title. */}
       {slug ? (
-        <Link href={`/Blog/posts/${slug}`} aria-label={title}>
+        <Link href={`/Blog/posts/${slug}`} as={`/Blog/posts/${slug}`} aria-label={title}>
           {image}
         </Link>
       ) : (
