@@ -50,6 +50,7 @@ body::-webkit-scrollbar-button {
 }
 
 
+
 @media(prefers-color-scheme: dark) {
   body::-webkit-scrollbar-track {
     background-color: #050506;
@@ -63,7 +64,4 @@ body::-webkit-scrollbar-button {
 
   }
 
-  code {
-    background-color: rgb(23, 23, 23);
-  }
 }
