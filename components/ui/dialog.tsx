@@ -5,7 +5,6 @@ import * as DialogPrimitive from "@radix-ui/react-dialog"
 
 import { cn } from "../../lib/utils"
 import { Cancel } from "iconoir-react"
-import { Button } from "./button"
 
 const Dialog = DialogPrimitive.Root
 
@@ -30,7 +29,7 @@ const DialogOverlay = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <DialogPrimitive.Overlay
     className={cn(
-      "data-[state=closed]:animate-out data-[state=open]:fade-in data-[state=closed]:fade-out fixed inset-0 z-50 p-4 bg-black/50 backdrop-blur-md transition-all duration-400",
+      "data-[state=closed]:animate-out data-[state=open]:fade-in data-[state=closed]:fade-out fixed inset-0 z-50 p-4  bg-black/10 backdrop-blur-md transition-all duration-400",
       className
     )}
     {...props}
@@ -55,7 +54,21 @@ const DialogContent = React.forwardRef<
       {...props}
     >
       {children}
-      <DialogPrimitive.Close className="absolute top-0 right-0 sm:top-1 sm:right-1 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-neutral-100 dark:focus-visible:ring-neutral-400 dark:focus-visible:ring-offset-neutral-900 dark:data-[state=open]:bg-neutral-800 mix-blend-difference p-1" >
+      <DialogPrimitive.Close className="
+      p-1 150ms absolute top-0 right-0 
+      rounded-lg transition-all 
+      hover:bg-neutral-700 
+      dark:hover:bg-accent-6 dark:hover:text-neutral-100
+      bg-accent-5
+      text-accent-3
+      dark:bg-accent-solid-white
+      dark:text-neutral-900
+      focus-visible:outline-none 
+      focus-visible:rounded-xl
+      focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 disabled:pointer-events-none 
+      data-[state=open]:bg-neutral-100 dark:focus-visible:ring-neutral-400 
+      dark:focus-visible:ring-offset-neutral-900 dark:data-[state=open]:bg-neutral-800 
+      " >
           <Cancel width={30} height={30} />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
@@ -70,7 +83,7 @@ const DialogHeader = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      "flex flex-col space-y-2 text-center sm:text-left",
+      "flex flex-col space-y-2 text-left",
       className
     )}
     {...props}
@@ -114,7 +127,7 @@ const DialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
-    className={cn("text-sm text-neutral-500", "dark:text-neutral-400", className)}
+    className={cn("text-sm text-neutral-900", "dark:text-neutral-300", className)}
     {...props}
   />
 ))

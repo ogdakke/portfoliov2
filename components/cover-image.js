@@ -3,7 +3,7 @@ import Link from "next/link";
 import { urlForImage } from "../lib/sanity";
 
 export default function CoverImage({ title, slug, image: source, priority }) {
-  const imgUrl = urlForImage(source).height(1200).width(2000).url();
+  const imgUrl = urlForImage(source).height(1200).width(2000).url() || ""
   // Check if an image has been provided
   //  since the query is dereferencing like: "coverImage.asset->", we can just check for _id immediatly
   const image = source?._id ? (

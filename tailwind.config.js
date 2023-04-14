@@ -55,5 +55,8 @@ module.exports = {
       sans: ["Inter", ...fontFamily.sans],
     },
   },
-  plugins: [],
+  future: {
+    hoverOnlyWhenSupported: true
+  },
+  plugins: [require("tailwindcss-animate")]
 };

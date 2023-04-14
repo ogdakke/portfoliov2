@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
+import { cn } from "../lib/utils"
 // import Book from "iconoir-react/dist/Book";
 // import GitHub from "iconoir-react/dist/GitHub";
 // import Home from "iconoir-react/dist/Home";
@@ -58,20 +59,28 @@ export default function Navbar() {
 
   return (
     <div
-      className={`fixed bottom-5 z-50 flex h-min w-full justify-center px-3`}
+      className={`group fixed bottom-0 pb-5 z-50 flex h-min w-full justify-center pt-16  px-3`}
     >
       <nav
-        className="dark: relative flex w-full max-w-3xl flex-row justify-between 
-      rounded-2xl 
-      border 
-      border-accent-5/5
-      dark:border-accent-3/10 
-      bg-accent-4/50
-      p-3
-      shadow-2xl 
-      shadow-accent-5/40 backdrop-blur-xl
-      dark:bg-accent-1/40
-      dark:shadow-none md:p-5"
+        className="
+        relative flex w-full max-w-3xl flex-row justify-between 
+        rounded-2xl
+        group-hover:opacity-100
+        group-hover:py-3
+        group-hover:px-2
+        group-hover:bg-accent-4/50
+        dark:group-hover:bg-accent-1/50
+        p-1
+        transition-all
+        border 
+        border-accent-5/5
+        dark:border-accent-3/10 
+        bg-accent-4/30
+        shadow-2xl 
+        shadow-accent-5/40 backdrop-blur-xl
+        dark:bg-accent-1/40
+        dark:shadow-none 
+      "
       >
         <div
           className="
@@ -87,20 +96,36 @@ export default function Navbar() {
             return (
               <Link
                 key={item.title}
-                className={`relative flex items-center gap-1 rounded-lg py-1 
+                className={`relative flex items-center 
+                rounded-lg py-1 
                 px-3 
-                text-lg transition-all duration-150 
+                text-lg transition-all 
                 hover:bg-bgLight/75 dark:hover:bg-bgPrimary/75`}
                 href={item.url} 
               >
                 {pathname === item.url ? 
-                <span className={`absolute inset-0 bg-bgLight/25 dark:bg-bgPrimary/50
-                  rounded-lg
+                <span className={`absolute 
+                  inset-0 bg-bgLight/25 
+                  dark:bg-bgPrimary/50
+                  rounded-xl
+                  block
+                  group-hover:rounded-lg
+
                   z-[-1]`}> 
                 </span>
                 : null}
+
                 {item.logo.element}
-                {item.title}
+                <span className={`
+                  ${pathname === item.url ? "text-[0px]" : "text-[0px]"}
+                  overflow-hidden
+                  group-hover:animate-in                  
+                  group-hover:text-base
+                  transition-all
+                ${item.title ? "group-hover:pl-1" : ""}
+                  `}>
+                  {item.title}
+                </span>
               </Link>
             );
           })}
@@ -116,6 +141,7 @@ export default function Navbar() {
             hover:bg-bgLight/75
             dark:hover:bg-bgPrimary/75
           stroke-accent-5 
+          focus-visible:ring-2
             p-1.5 opacity-75 transition-all hover:opacity-100 dark:stroke-accent-3"
           >
             <SeaAndSun strokeWidth={1.45} width={28} height={28} />

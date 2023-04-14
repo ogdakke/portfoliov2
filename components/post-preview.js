@@ -13,7 +13,7 @@ export default function PostPreview({
 }) {
   return (
     <div>
-      <div className="mb-5">
+      <div className="mb-5 brightness-75 hover:brightness-100 transition">
         <CoverImage slug={slug} title={title} image={coverImage} />
       </div>
       <h3 className="mb-3 text-3xl leading-snug">

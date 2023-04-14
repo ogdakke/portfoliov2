@@ -1,7 +1,7 @@
 import React from "react";
 import { urlForImage } from "../lib/sanity";
 import Image from "next/image";
-import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 import { OpenNewWindow } from "iconoir-react";
 import { Button } from "./ui/button";
 
@@ -18,10 +18,16 @@ const imgUrl = urlForImage(value.asset)
   .width(width)
   .url();
 return (
+  <div className="flex justify-center ">
   <Dialog>
+    <div>
     <DialogTrigger>
       <Image
-        className="rounded-xl shadow-xl"
+        className="rounded-xl border 
+        border-accent-5/10
+        hover:border-accent-5/30
+        dark:border-accent-4/10 dark:hover:border-accent-4/25 
+        shadow-lg hover:shadow-xl transition-all 150ms"
         width={width}
         height={height}
         alt={value.alt}
@@ -32,20 +38,24 @@ return (
         blurDataURL={value.asset.metadata.lqip}
         />
     </DialogTrigger>
-    <DialogContent>
-      <figure>
-        <Button 
-        variant={"ghost"} 
-        className="absolute p-2 left-1 top-1 mix-blend-difference" 
-        >
-          <a 
-            title="Open full size image" 
-          href={imgUrl} target="_blank" rel="noopener noreferrer">
-            <OpenNewWindow className=""/>
-          </a>
-        </Button>
+      <p className="!mt-0  opacity-80 text-sm">{value.alt}</p>
+    </div>
+    <DialogContent className="!bg-transparent">
+      <DialogHeader>
+          <Button 
+          className="py-1 px-2 left-1 top-1 justify-start max-w-fit" 
+          >
+            <a 
+            tabIndex={2}
+            className=""
+              title="Open full size image" 
+            href={imgUrl} target="_blank">
+              <OpenNewWindow className="" width={24} height={24}/>
+            </a>
+          </Button>
+      </DialogHeader>
       <Image 
-      className="rounded-md " 
+      className="rounded-md" 
       
       src={imgUrl} 
       width={width} 
@@ -54,10 +64,10 @@ return (
       priority={false} 
       placeholder="blur" 
       blurDataURL={value.asset.metadata.lqip} 
-      
       />
-      </figure>
     </DialogContent>
   </Dialog>
+  </div>
+
 );
 }

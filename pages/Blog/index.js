@@ -28,15 +28,6 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
   // const {data: allPosts} = usePreviewSubscription(indexQuery, {initialData: initialAllPosts, enabled: preview})
   const [heroPost, ...morePosts] = allPosts || [];
 
-  if (preview) {
-    return (
-      // <></>
-      <PreviewSuspense fallback={allPosts}>
-         <PreviewDocumentsCount />
-        <div>preview</div>
-      </PreviewSuspense>
-    );
-  }
   return (
     <>
       <Layout preview={preview}>

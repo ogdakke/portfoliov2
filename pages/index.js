@@ -9,11 +9,13 @@ import { usePreviewSubscription } from "../lib/sanity";
 import { getClient, overlayDrafts } from "../lib/sanity.server";
 import HeroLanding from "../components/hero-landing";
 import { Projects } from "../components/projects";
+
 export default function Home({ allPosts: initialAllPosts, preview }) {
   const { data: allPosts } = usePreviewSubscription(indexQuery, {
     initialData: initialAllPosts,
     enabled: preview,
   });
+
   const [heroPost] = allPosts || [];
   return (
     <Layout preview={preview}>
@@ -32,7 +34,7 @@ export default function Home({ allPosts: initialAllPosts, preview }) {
         <SectionSeparator />
         {heroPost && (
           <>
-            <p className="absolute z-10 m-2 w-max rounded-2xl bg-accent-3 py-2 px-4 text-lg text-accent-7">
+            <p className="absolute z-10 m-2 w-max rounded-lg bg-accent-3 py-2 px-4 text-lg text-accent-7">
               New in blog!
             </p>
             <HeroPost
@@ -46,6 +48,9 @@ export default function Home({ allPosts: initialAllPosts, preview }) {
         )}
         <SectionSeparator />
         <Projects />
+        <div>
+          
+        </div>
         {/* <Links /> */}
         {/* <Table /> */}
       </Container>
